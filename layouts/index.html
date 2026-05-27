@@ -1,0 +1,41 @@
+{{- define "main" }}
+<div class="hero">
+  <div class="hero-label">AI · 工程 · 知識工作</div>
+  <h1 class="hero-title">AI 時代的個人研究書房</h1>
+  <p class="hero-sub">
+    記錄在軟體工程與 AI 工作流上的實踐與思考。不追玩具，只整理真正帶得走的知識。
+  </p>
+</div>
+
+<div class="home-divider"></div>
+
+<div class="home-section-label">最新文章</div>
+
+{{- $posts := where .Site.RegularPages "Type" "posts" }} {{- $paginator :=
+.Paginate $posts }} {{- range $paginator.Pages }}
+<article class="home-article">
+  <div class="article-body">
+    {{- if .Params.tags }}
+    <div class="article-tag">{{ index .Params.tags 0 }}</div>
+    {{- end }}
+    <h2 class="article-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    {{- if .Description }}
+    <p class="article-excerpt">{{ .Description }}</p>
+    {{- end }}
+  </div>
+  <div class="article-meta">
+    <div class="article-date">{{ .Date.Format "2006.01.02" }}</div>
+    <div class="article-read">{{ .ReadingTime }} 分鐘</div>
+  </div>
+</article>
+{{- end }}{{- if gt $paginator.TotalPages 1 }}
+<div class="pagination">
+  {{- if $paginator.HasPrev }}
+  <a href="{{ $paginator.Prev.URL }}">← 較新</a>
+  {{- end }} {{- if $paginator.HasNext }}
+  <a href="{{ $paginator.Next.URL }}">較舊 →</a>
+  {{- end }}
+</div>
+{{- end }} {{- end }}

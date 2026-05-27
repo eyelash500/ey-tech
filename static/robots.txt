@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eyelash500.github.io/ey-tech/sitemap.xml

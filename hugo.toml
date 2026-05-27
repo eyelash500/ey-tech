@@ -1,0 +1,65 @@
+baseURL = "https://eyelash500.github.io/ey-tech/"
+languageCode = "zh-tw"
+title = "睫毛 Learn Notes"
+theme = "PaperMod"
+paginate = 10
+googleAnalytics = "G-WR38K9X37G"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowAllPagesInArchive = true
+  description = "AI 時代的個人研究書房。記錄軟體工程、AI 工作流、QA 實踐與知識工作的心得。"
+  author = "睫毛"
+  ShowToc = true
+  TocOpen = false
+  ShowShareButtons = true
+  images = ["images/og-default.png"]
+  mermaid = true
+
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+  [params.assets]
+    favicon = "favicon.ico"
+
+  [params.homeInfoParams]
+
+  [params.profileMode]
+    enabled = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  [[menu.main]]
+    identifier = "search"
+    name = "搜尋"
+    url = "/search/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "標籤"
+    url = "/tags/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "archives"
+    name = "全部文章"
+    url = "/archives/"
+    weight = 20

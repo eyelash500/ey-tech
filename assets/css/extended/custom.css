@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@400;500&display=swap');
+
+/* ── 字型 ── */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title, .entry-title, nav {
+    font-family: 'Manrope', 'Noto Sans TC', sans-serif;
+}
+
+.post-content p,
+.post-content li {
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.9;
+}
+
+/* ── Light Mode 色系 ── */
+:root {
+    --theme: #F7F5F2;
+    --entry: #EFECE7;
+    --primary: #1F1F1F;
+    --secondary: #6B6B6B;
+    --tertiary: #E2DDD6;
+    --content: #2A2A2A;
+    --hljs-bg: #E8E4DE;
+    --code-bg: #E8E4DE;
+    --border: #E2DDD6;
+}
+
+/* ── Dark Mode 色系 ── */
+[data-theme="dark"] {
+    --theme: #1C1A18;
+    --entry: #252220;
+    --primary: #E8E4DE;
+    --secondary: #9A9691;
+    --tertiary: #2E2B28;
+    --content: #D8D4CE;
+    --hljs-bg: #2E2B28;
+    --code-bg: #2E2B28;
+    --border: #2E2B28;
+}
+
+/* ── Accent 色 ── */
+a { color: #4A6170; }
+a:hover { color: #3A5060; }
+
+.post-title a,
+.entry-title a { color: var(--primary); }
+.post-title a:hover,
+.entry-title a:hover { color: #4A6170; }
+
+/* ── Layout ── */
+.main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 2rem);
+    min-height: unset;
+}
+
+/* ── 標籤樣式 ── */
+.post-tags a,
+.terms-tags a {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: #4A6170;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 3px 12px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+    background: #4A6170;
+    color: #F7F5F2;
+    border-color: #4A6170;
+}
+
+
+/* ── Hero ── */
+.hero {
+  padding: clamp(3rem, 8vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4A6170;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px;
+  color: var(--secondary);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0;
+}
+
+/* ── 文章列表 ── */
+.home-divider {
+  border-top: 0.5px solid var(--border);
+}
+
+.home-section-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  padding: 1.5rem 0;
+}
+
+.home-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.article-body { flex: 1; }
+
+.article-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4A6170;
+  margin-bottom: 0.5rem;
+}
+
+.article-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.article-title a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.article-title a:hover { color: #4A6170; }
+
+.article-excerpt {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.article-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.article-date {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.article-read {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  color: var(--tertiary);
+  margin-top: 4px;
+}
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+}
+
+/* ── Footer ── */
+.site .site-footer,
+footer.site-footer {
+  border-top: 0.5px solid var(--border);
+  margin-top: 4rem;
+  padding: 2rem clamp(1rem, 5vw, 2rem) 3rem;
+  background: transparent;
+}
+
+.site-footer .footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  color: var(--secondary);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.footer-links a:hover { color: #4A6170; }
+
+.footer-copy {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  color: var(--tertiary);
+}
+
+
+/* ── 標籤雲（tags 頁面）── */
+.terms-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 2rem 0;
+}
+
+.terms-tags a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  padding: 6px 16px;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  color: var(--secondary);
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.terms-tags a:hover {
+  border-color: #4A6170;
+  color: #4A6170;
+}
+
+.terms-tags a sup {
+  font-size: 11px;
+  color: var(--tertiary);
+  margin-left: 4px;
+}
+
+/* ── Archives 頁 ── */
+.archive-year {
+  font-family: 'Manrope', sans-serif;
+  margin-top: 2rem;
+}
+
+.archive-month {
+  padding: 1rem 0;
+}
+
+.archive-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.archive-entry-title {
+  font-family: 'Manrope', sans-serif;
+}

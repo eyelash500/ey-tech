@@ -1,0 +1,24 @@
+# 睫毛 Learn Notes
+
+> AI 時代的個人研究書房。記錄軟體工程、AI 工作流、QA 實踐與知識工作的心得。
+
+## 關於
+
+- 作者：睫毛（eyelash500）
+- 語言：繁體中文
+- 更新頻率：每週 1-2 篇
+
+## 內容分類
+
+- AI：AI 工具使用、工作流優化、Agent 實踐心得
+- QA：測試策略、pytest、自動化測試
+- 工作經驗：工程師職涯、團隊協作、技術溝通
+- Python：Python 開發筆記
+- C#：C# 開發筆記
+
+## 連結
+
+- 技術 Blog：https://eyelash500.github.io/ey-tech/
+- 休閒 Blog：https://www.ey-relax.idv.tw
+- GitHub：https://github.com/eyelash500
+- iThome：https://ithelp.ithome.com.tw/users/20103826
