@@ -63,3 +63,17 @@ googleAnalytics = "G-WR38K9X37G"
     name = "全部文章"
     url = "/archives/"
     weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "關於"
+    url = "/about/"
+    weight = 30
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100

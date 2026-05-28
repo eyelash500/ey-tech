@@ -1,0 +1,14 @@
+{{ $related := .Site.RegularPages.Related . | first 3 }} {{ with $related }}
+<div class="related-posts">
+  <div class="related-title">相關文章</div>
+  {{ range . }}
+  <article class="related-post">
+    <a href="{{ .Permalink }}">
+      <div class="related-post-tag">{{ index .Params.tags 0 }}</div>
+      <div class="related-post-title">{{ .Title }}</div>
+      <div class="related-post-date">{{ .Date.Format "2006.01.02" }}</div>
+    </a>
+  </article>
+  {{ end }}
+</div>
+{{ end }}
