@@ -3,6 +3,7 @@ title: "關於睫毛"
 layout: "page"
 url: "/about/"
 ---
+{{< figure src="/ey-tech/images/avatar.png" alt="睫毛" class="avatar" >}}
 
 ## 你好，我是睫毛 👋
 

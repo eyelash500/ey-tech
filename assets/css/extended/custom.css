@@ -81,35 +81,37 @@ a:hover { color: #3A5060; }
 
 /* ── Hero ── */
 .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: clamp(3rem, 8vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem);
+  gap: 2rem;
 }
 
-.hero-label {
-  font-family: 'Manrope', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #4A6170;
-  margin-bottom: 1.25rem;
+.hero-content {
+  flex: 1;
 }
 
-.hero-title {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(24px, 4vw, 32px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin: 0 0 1rem;
-  color: var(--primary);
+.hero-avatar-right {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
 }
 
-.hero-sub {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 15px;
-  color: var(--secondary);
-  line-height: 1.8;
-  max-width: 480px;
-  margin: 0;
+/* 手機改成上下排列 */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .hero-avatar-right {
+    width: 72px;
+    height: 72px;
+  }
 }
 
 /* ── 文章列表 ── */
@@ -341,4 +343,24 @@ footer.site-footer {
   font-size: 12px;
   color: var(--secondary);
   margin-top: 0.4rem;
+}
+
+/* ── 頭像 ── */
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 1.5rem 0;
+}
+
+/* ── 首頁小頭像 ── */
+.hero-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+  display: block;
 }
