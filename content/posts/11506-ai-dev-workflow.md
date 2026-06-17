@@ -1,5 +1,5 @@
 ---
-title: "一人團隊的 AI 協作新思維：如何打造「公私分明」的 AI 輔助開發工作流？"
+title: "一人團隊的 AI 協作術：如何打造公私分明的 AI 開發工作流"
 date: 2026-06-12T22:00:00+08:00
 draft: false
 tags: ["AI", "AI Agent", "開發工作流", "Antigravity", "Claude", "人機協作"]
