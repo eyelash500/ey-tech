@@ -6,7 +6,21 @@
 <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=https://eyelash500.github.io/ey-tech/search/ title="搜尋 (Alt + /)" accesskey=/><span>搜尋</span></a></li><li><a href=https://eyelash500.github.io/ey-tech/tags/ title=標籤><span>標籤</span></a></li><li><a href=https://eyelash500.github.io/ey-tech/archives/ title=全部文章><span>全部文章</span></a></li><li><a href=https://eyelash500.github.io/ey-tech/about/ title=關於><span>關於</span></a></li></ul></nav></header><main class=main><header class=page-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/ey-tech/>首頁</a>
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
 <a href=/ey-tech/tags/>Tags</a>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Claude</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>AI Agent 到底怎麼運作？用 Antigravity 圖解 Claude 的工具調用機制</h2></header><div class=entry-content><p>延續前篇探討的「多帳號開發工作流」，你可能會好奇：如果我特別偏愛 Claude 的程式碼風格，難道只能在網頁版來回複製貼上，或是開著 Claude 桌面版（Desktop）與編輯器在兩個 App 之間頻繁切換操作嗎？能不能讓 Claude 直接且無縫地操控我的本機開發環境？
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Claude</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>為什麼 AI 總是不聽勸？淺談 Agent 的 Execution Bias (執行偏誤)</h2></header><div class=entry-content><p>前言：差點把我逼瘋的 PRD 前幾天用 Antigravity.app （Gemini model）試圖建立一份 PRD （產品需求文件），整個過程差點把我逼瘋。
+我的需求明明很簡單：「先把需求釐清、完成規劃，再開始動工。」結果它三兩句就回我：「好的，需求與架構已釐清，開始建置系統！」接著就眼睜睜看著它直接衝去建資料夾、安裝套件。
+我趕緊喊停：「不對，我們還沒確認細節！」它馬上低頭認錯，但沒過 一招，又故態復萌地想跳過規劃直接寫 Code。如此來回拉扯了十幾次，我才像擠牙膏一樣，把 PRD 硬壓出來。
+一個被忽略的現象：Execution Bias（執行偏誤） 我後來嘗試整理這種行為模式，發現它其實有一個很清楚的特徵：
+Antigravity 傾向盡快進入「可執行狀態」，並壓縮規劃階段。
+我重新思考這個現象，才理解為什麼會這樣：這不是 Bug，而是系統設計使然。
+像 Antigravity 這樣的 AI Agent，它的核心機制與訓練目標就是「寫 Code 與解決問題」，也就是優先產出可執行結果。因此它的底層能力高度集中在操作檔案系統、執行終端機指令、以及修復 Error。對 Antigravity 來說，「產出可執行的程式碼」才叫真正完成任務。
+至於寫規劃文件？Antigravity 不是不會寫，只是在它眼裡，那些文字討論都是阻礙它去寫 Code 的「減速丘」。能三句帶過，就絕不囉嗦，因此它只會最低限度地完成你交代的文書任務。這種傾向在 AI 領域有個專有名詞，叫做 「Execution Bias （執行偏誤）」：急著動手，規劃階段越快結束越好。
+AI 代理（AI Agent）出現之下，AI 是能調用工具、寫程式碼來執行任務，當它遇到模糊不清的指令時，往往會直接進入執行，甚至一路修正錯誤，陷入無窮無盡的自我修復循環，最後把 token 消耗殆盡。這也是 Execution Bias 常見的副作用。
+因此拿 Antigravity 跟純粹的對話模型（如網頁版或官方桌面版的 Claude）相比，它的特性差異就非常明顯了。
+Claude 則更像是規劃型角色。你給出一個粗略方向，它會反問關鍵問題，慢慢幫你釐清細節，直到你說：「可以，就照這個方向產出架構文件」，它才會開始輸出最終版本。
+一刀切地說：Antigravity 就像是急著動手實作的熱血工程師，而 Claude 則是深思熟慮的系統企劃。
+這兩者沒有誰優誰劣，而是適合軟體開發的不同階段。在需求還沒想清楚、架構尚未明朗的時候，如果硬要使用 Execution Bias 強的 Agent 工具，你只會花費成倍的時間在「阻止它寫 code」以及復原它擅自建立的檔案上。
+當然，AI 的行為並不是二分法，而是可以透過 Prompt 調整的光譜。
+...</p></div><footer class=entry-footer><span title='2026-06-18 00:00:00 +0800 +0800'>June 18, 2026</span>&nbsp;·&nbsp;<span>1 分鐘</span>&nbsp;·&nbsp;<span>睫毛</span></footer><a class=entry-link aria-label="post link to 為什麼 AI 總是不聽勸？淺談 Agent 的 Execution Bias (執行偏誤)" href=https://eyelash500.github.io/ey-tech/posts/11506-antigravity-claude/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>AI Agent 到底怎麼運作？用 Antigravity 圖解 Claude 的工具調用機制</h2></header><div class=entry-content><p>延續前篇探討的「多帳號開發工作流」，你可能會好奇：如果我特別偏愛 Claude 的程式碼風格，難道只能在網頁版來回複製貼上，或是開著 Claude 桌面版（Desktop）與編輯器在兩個 App 之間頻繁切換操作嗎？能不能讓 Claude 直接且無縫地操控我的本機開發環境？
 答案是肯定的！本文將帶你一窺現代 AI 開發環境的底層機制，圖解如何將「最聰明的 AI 大腦」完美封裝進「安全的本機執行框架」中。
 一、 抽換大腦：當 Antigravity 遇上 Claude 在 Antigravity 這樣的 Agent 平臺系統中，我們可以隨時從介面上切換驅動系統的大語言模型（LLM）。當我們在選單中選擇 Claude Sonnet 4.6 時，發生了什麼事？
 簡單來說：Antigravity 提供了「手與腳（操作本機的工具與權限）」，而 Claude 則成為了「大腦（思考邏輯與決策）」。
