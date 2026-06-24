@@ -17,7 +17,7 @@ cover:
 
 但是，龍蝦這種模式很燒 Token，容易把我們錢用完，所以要謹慎使用。但我不知道自己平常用多少 Token、每個 session 消耗多少。像是在自己的電腦中，平常在使用 Claude 方案時（如 Pro/Team）不用管 Token 花費，但當開始在終端機（CLI）串接 API 寫 Agent 或開發時，是按 Token 計費的（用多少算多少），如果不注意很容易把餘額燒光。網頁版（或是桌面版）通常只看得到百分比的使用限制，我很難知道自己真實用了多少 Token、花了多少錢，自己有沒有過度浪費 Token 的問題？
 
-![Claude team 方案](/ey-tech/images/posts/11506-ccusage/p1.png)
+![Claude team 方案](p1.png)
 
 於是我找到了一個好用工具－ `ccusage` ，它就像是 AI 時代的「電子記帳本」，專門幫忙統計透過 CLI 呼叫各家大模型的 Token 消耗與真實美金花費。
 
@@ -31,7 +31,7 @@ cover:
 
 直接在終端機輸入 `ccusage daily`（看每日用量）或 `ccusage monthly`（看每月總結）。
 
-![ccusage daily 畫面](/ey-tech/images/posts/11506-ccusage/p2.png)
+![ccusage daily 畫面](p2.png)
 
 ####  報表看什麼
 
